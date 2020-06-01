@@ -1,0 +1,54 @@
+version: '2'
+services:
+  web_mysql:
+    image: "daocloud.io/mysql:5.7"
+    restart: always
+    hostname: web_mysql
+    volumes:
+        - "./mysql:/var/lib/mysql"
+        - "./init:/docker-entrypoint-initdb.d/"
+    ports:
+        - "3306:3306"
+    environment:
+        MYSQL_ROOT_PASSWORD: "crediteaseitsec"
+
+  web_redis:
+    image: "daocloud.io/redis"
+    restart: always
+    hostname: web_redis
+    command: redis-server --requirepass "crediteaseitsec"
+    ports:
+          - "6379:6379"
+
+  backend:
+    image: "crediteaseitsec/insight2"
+    restart: always
+    ports:
+     - "8001:8000"
+    volumes:
+        - "./backend_logs:/app/insight2/logs"
+    command:
+     - /usr/bin/bash
+     - -c
+     - |
+       supervisord -c /app/insight2/supervisord.conf
+       while true;do sleep 100;done
+    depends_on:
+     - "web_mysql"
+     - "web_redis"
+    links:
+     - "web_mysql"
+     - "web_redis"
+
+  front:
+    image: "crediteaseitsec/insight2_front"
+    restart: always
+    ports:
+     - "8000:80"
+
+    volumes:
+     - "./front_logs:/logs"
+
+    depends_on:
+     - "backend"
+
