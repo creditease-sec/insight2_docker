@@ -13,7 +13,7 @@
 - [docker-compose](https://docs.docker.com/compose/install/)
 
 ```bash
-git clone https://github.com/CESRC-CreditEase/insight2_docker.git
+git clone https://github.com/creditease-sec/insight2_docker.git
 cd insight2_docker
 docker-compose up
 
