@@ -1,1 +1,29 @@
-# insight2_docker
+# insight2 docker
+---
+洞察2 一键启动简介
+采用docker-compose 启动mysql,redis,服务
+
+---
+
+
+### 1. 快速开始(Quick Start) 
+---
+(1) 使用Docker Compose
+
+- [docker-compose](https://docs.docker.com/compose/install/)
+
+```bash
+git clone https://github.com/CESRC-CreditEase/insight2_docker.git
+cd insight2_docker
+docker-compose up
+
+```
+(2) 系统登录
+
+
+```bash
+地址：http://localhost:8000
+帐号：admin
+密码：admin!Aa2020
+
+```
