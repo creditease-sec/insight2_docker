@@ -13,9 +13,9 @@
 - [docker-compose](https://docs.docker.com/compose/install/)
 
 ```bash
-git clone https://github.com/CESRC-CreditEase/insight2_docker.git
+git clone https://github.com/creditease-sec/insight2_docker.git
 cd insight2_docker
-docker-compose up
+sudo docker-compose up
 
 ```
 (2) 系统登录
@@ -25,7 +25,7 @@ docker-compose up
 地址：http://localhost:8000
 帐号：admin
 密码：admin!Aa2020
-
+后台地址：http://localhost:8000/#/admin
 ```
 (2) 版本更新
 
