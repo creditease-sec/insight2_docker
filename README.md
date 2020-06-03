@@ -27,7 +27,7 @@ sudo docker-compose up
 密码：admin!Aa2020
 后台地址：http://localhost:8000/#/admin
 ```
-(2) 版本更新
+(3) 版本更新
 
 ```bash
 docker-compose pull && docker-compose up
