@@ -27,3 +27,12 @@ docker-compose up
 密码：admin!Aa2020
 
 ```
+(2) 版本更新
+
+```bash
+docker-compose pull && docker-compose up
+or
+sudo docker-compose pull && sudo docker-compose up
+
+```
+
