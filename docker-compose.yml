@@ -1,7 +1,7 @@
 version: '2'
 services:
   web_mysql:
-    image: "daocloud.io/mysql:5.7"
+    image: "mysql:5.7"
     restart: always
     hostname: web_mysql
     volumes:
@@ -13,7 +13,7 @@ services:
         MYSQL_ROOT_PASSWORD: "crediteaseitsec"
 
   web_redis:
-    image: "daocloud.io/redis"
+    image: "redis"
     restart: always
     hostname: web_redis
     command: redis-server --requirepass "crediteaseitsec"
